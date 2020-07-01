@@ -19422,7 +19422,7 @@ const ASX_OUCH_FIELDS =
         OrderBookID: { type: 'INTEGER', length: 4 },
         Side: { type: 'STRING', length: 1 },
         Quantity: { type: 'INTEGER', length: 8 },
-        Price: { type: 'INTEGER', length: 4 , multiplier: 1000},
+        Price: { type: 'INTEGER', length: 4 , multiplier: 10000},
         TimeInForce: { type: 'INTEGER', length: 1 },
         OpenClose: { type: 'INTEGER', length: 1 },
         ClientAccount: { type: 'STRING', length: 10 },
