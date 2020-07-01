@@ -306,7 +306,7 @@ $$("sets_mod").hide();
 
 
 // Load from symbol.csv into combo box for 'OrderBookID'
-webix.ajax("https://weifix.github.io/asx/csv/symbols.csv",'txt').then(function(data){
+webix.ajax("./csv/symbols.csv",'txt').then(function(data){
   let  symbol_options =( _.tail( _.map( _.split(data.text(),'\n'),(line)=>{arr =_.split(line,'|');
                                           // console.log(arr);
                                   normalized_id = parseInt( _.padStart(arr[8],8,'0'),16);
