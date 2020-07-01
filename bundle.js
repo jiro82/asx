@@ -19578,7 +19578,7 @@ function encodeOUCHBinary( wType, wObj){
             if (  _.includes( ['STRING'],fieldType) ){
 
                 var buf = Buffer.allocUnsafe(fieldLength);
-                var str = (fieldType==='STRING')?  _.padStart(fieldValue.substr(0,fieldLength), fieldLength,' ') :  _.padEnd(fieldValue.substr(0,fieldLength), fieldLength,' ') ;
+                var str = (fieldType==='STRING')?  _.padStart( (_.isString(fieldValue) ? fieldValue.substr(0,fieldLength):'' ), fieldLength,' ') :  _.padEnd(fieldValue.substr(0,fieldLength), fieldLength,' ') ;
 
                 buf.write(str)
                 result.push(buf);
