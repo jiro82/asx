@@ -101,7 +101,7 @@ var propertysheet_ord = {
     
     { label:"MessageType", type:"combo", id:"MessageType", options:MessageType_options, value: 'O'},
     { label:"OrderToken(14-char text)", type:"text", id:"OrderToken", value: '$msec_since_sod'},
-    { label:"OrderBookID(Integer)", type:"text", id:"OrderBookID", value: 'APA.AX'},
+   { label:"OrderBookID(Integer)", type:"combo", id:"OrderBookID", options:[],value: ''},
  
 
     { label:"Side", type:"combo", id:"Side", value: 'Buy', options:side_options},
@@ -315,8 +315,8 @@ webix.ajax("./csv/symbols.csv",'txt').then(function(data){
                                             return {id:normalized_id,value:normalized_value} 
                                                                   })));
           
-	console.log(symbol_options);
-                           // $$("sets_ord").getItem('OrderBookID' ).collection.parse(symbol_options)  
+	//console.log(symbol_options);
+                            $$("sets_ord").getItem('OrderBookID' ).collection.parse(symbol_options)  
 			    
 });
 
