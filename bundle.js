@@ -19422,7 +19422,7 @@ const ASX_OUCH_FIELDS =
         OrderBookID: { type: 'INTEGER', length: 4 },
         Side: { type: 'STRING', length: 1 },
         Quantity: { type: 'INTEGER', length: 8 },
-        Price: { type: 'INTEGER', length: 4 },
+        Price: { type: 'INTEGER', length: 4 , multiplier: 1000},
         TimeInForce: { type: 'INTEGER', length: 1 },
         OpenClose: { type: 'INTEGER', length: 1 },
         ClientAccount: { type: 'STRING', length: 10 },
@@ -19527,7 +19527,8 @@ function encodeOUCHBinary( wType, wObj){
             var fieldInfo = _.get(ASX_OUCH_FIELDS,fieldName);
             var fieldLength =fieldInfo.length
             var fieldType = fieldInfo.type
-            var fieldValue = _.get(wObj,fieldName);
+            var fieldMultiplier = _.get(fieldInfo,'multiplier',1);
+            var fieldValue =  _.has(fieldInfo,'multiplier') ?  _.get(wObj,fieldName) * fieldMultiplier: _.get(wObj,fieldName);
 
           //  fieldValue =  ( _.isFunction( _.get(special_keywords, fieldValue ))) ? _.get(special_keywords, fieldValue)() : fieldValue  ;
 
@@ -19538,7 +19539,7 @@ function encodeOUCHBinary( wType, wObj){
             if (fieldType === 'INTEGER' && fieldLength=='1'){
 
                 var buf = Buffer.allocUnsafe(1);
-                buf.writeUInt8( parseInt(fieldValue))
+               buf.writeUInt8( parseInt(fieldValue))
                 result.push(buf);
                 // console.log(fieldName, fieldValue,buf.toString('hex'));
             }
@@ -19547,6 +19548,7 @@ function encodeOUCHBinary( wType, wObj){
 
                 var buf = Buffer.allocUnsafe(2);
                 buf.writeUInt16BE( parseInt(fieldValue))
+
                 result.push(buf);
                 // console.log(fieldName, fieldValue,buf.toString('hex'));
             }
@@ -19554,8 +19556,9 @@ function encodeOUCHBinary( wType, wObj){
 
             if ( _.includes( ['INTEGER'],fieldType) && fieldLength=='4'){
 
+
                 var buf = Buffer.allocUnsafe(4);
-                buf.writeUInt32BE( parseInt(fieldValue))
+                buf.writeUInt32BE( parseInt( fieldValue))
                 result.push(buf);
                 // console.log(fieldName, fieldValue,buf.toString('hex'));
             }
