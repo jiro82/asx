@@ -221,7 +221,7 @@ var MessageTemplateLists = [
 {"id":10,"title":"C-Centre Point – Any Price Block Order", PacketType:'U' , MessageType: 'O' , OUCHOrderType : 'C'},
 {"id":11,"title":"E-Centre Point – Any Price Block w/ MAQ Order", PacketType:'U' , MessageType: 'O' , OUCHOrderType : 'E'},
   
-{"id":12,"title":"Y-Limit order.", PacketType:'U' , MessageType: 'Y',  OUCHOrderType : 'Y'},
+{"id":12,"title":"Y-Limit order.", PacketType:'U' , MessageType: 'O',  OUCHOrderType : 'Y'},
 {"id":13,"title":"N-Centre Point Order (mid-point only). o Price > 0 defines a Centre Point Limit order. Price = 0 defines a Centre Point Market order.", PacketType:'U' , MessageType: 'O' , OUCHOrderType : 'N'},
 {"id":14,"title":"D-Centre Point Order (‘dark limit’ order with mid-tick flag enabled).", PacketType:'U' , MessageType: 'O', OUCHOrderType : 'D'},
 {"id":15,"title":"S-Sweep order. Price > 0 defines a Limit Sweep order. Price = 0 defines a Market-to- Limit Sweep order.", PacketType:'U' , MessageType: 'O' , OUCHOrderType : 'S'},
