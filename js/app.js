@@ -303,28 +303,24 @@ $$("sets_ord").setValues(defaults_new_order);
 $$("sets_cxl").hide();
 $$("sets_mod").hide();
 
-console.log($$('OrderBookID'));
 
+
+// Load from symbol.csv into combo box for 'OrderBookID'
+webix.ajax("https://weifix.github.io/asx/csv/symbols.csv",'txt').then(function(data){
+  let  symbol_options =( _.tail( _.map( _.split(data.text(),'\n'),(line)=>{arr =_.split(line,'|');
+                                          // console.log(arr);
+                                  normalized_id = parseInt( _.padStart(arr[8],8,'0'),16);
+                                  normalized_value = [arr[2],'.AX',' (x',arr[8], ' INT:',normalized_id,')'].join('');
+                                            return {id:normalized_id,value:normalized_value} 
+                                                                  })));
+          
+                            $$("sets_ord").getItem('OrderBookID' ).collection.parse(symbol_options)  
+});
 
 
 
 ///////////////////////Handler Functions //////////////////////////////////
-/**
-function handlerListClick(){
-//console.log(_.get($$('list1').getSelectedItem(true),'0.id'));
-  
- let orderType=_.get($$('list1').getSelectedItem(true),'0.id');
-  
- var hexstring = global_ASX_OUCH_ENCODE('UO',$$('sets_ord').getValues()).toString('hex');
-  
-  //console.log(hexstring);
-  $$('textarea1').setValue( hexstring);
-   
-  $$('sets_ord').setValues( _.assign(defaults_new_order,{OUCHOrderType:orderType }));
-  $$('textarea2').setValue( JSON.stringify($$('sets_ord').getValues(),null,2));
-  
-}
-**/
+
 function handlerListClick(){
 console.log(_.get($$('list1').getSelectedItem(true),'0'));
   
