@@ -100,7 +100,7 @@ var propertysheet_ord = {
     { label:"PacketType", type:"combo", id:"PacketType", value: 'U' , options: PacketType_options},
     
     { label:"MessageType", type:"combo", id:"MessageType", options:MessageType_options, value: 'O'},
-    { label:"OrderToken", type:"text", id:"OrderToken", value: '$msec_since_sod'},
+    { label:"OrderToken(14-char text)", type:"text", id:"OrderToken", value: '$msec_since_sod'},
     { label:"OrderBookID(Integer)", type:"text", id:"OrderBookID", value: 'APA.AX'},
  
 
