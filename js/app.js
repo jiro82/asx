@@ -54,10 +54,10 @@ var MessageType_options = [
 ];
 
 var tif_options = [
-         {id: 0 , value: "0(Day)"},
-         {id: 3 , value:"3(Immediate or Cancel (FaK))"},
-        {id: 4 , value:"4(Fill or Kill)"},
-        {id: 100 , value: "100(Fill-and-kill immediately)"}
+         {id: '0' , value: "0(Day)"},
+         {id: '3' , value:"3(Immediate or Cancel (FaK))"},
+        {id: '4' , value:"4(Fill or Kill)"},
+        {id: '100', value: "100(Fill-and-kill immediately)"}
  
 ];
 
@@ -259,7 +259,7 @@ const defaults_new_order =
   Side: 'B',
   Quantity: 1198,
   Price: "38.300",
-  TimeInForce: 3,
+  TimeInForce: '0',
   OpenClose: 0,
   ClientAccount: '   ',
   CustomerInfo: '               ',
