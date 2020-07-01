@@ -307,14 +307,17 @@ $$("sets_mod").hide();
 
 // Load from symbol.csv into combo box for 'OrderBookID'
 webix.ajax("./csv/symbols.csv",'txt').then(function(data){
-  let  symbol_options =( _.tail( _.map( _.split(data.text(),'\n'),(line)=>{arr =_.split(line,'|');
+	
+    symbol_options =( _.tail( _.map( _.split(data.text(),'\n'),(line)=>{arr =_.split(line,'|');
                                           // console.log(arr);
                                   normalized_id = parseInt( _.padStart(arr[8],8,'0'),16);
                                   normalized_value = [arr[2],'.AX',' (x',arr[8], ' INT:',normalized_id,')'].join('');
                                             return {id:normalized_id,value:normalized_value} 
                                                                   })));
           
-                            $$("sets_ord").getItem('OrderBookID' ).collection.parse(symbol_options)  
+	console.log(symbol_options);
+                           // $$("sets_ord").getItem('OrderBookID' ).collection.parse(symbol_options)  
+			    
 });
 
 
