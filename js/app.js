@@ -294,6 +294,9 @@ webix.ui({
     { rows:[propertysheet_ord,propertysheet_cxl,propertysheet_mod]},
     {rows:[textarea1,textarea2]}
   ]
+	 ready:function() {
+    webix.message('gui loaded..');
+}
 });
 
 
