@@ -259,7 +259,7 @@ const defaults_new_order =
   Side: 'B',
   Quantity: 1198,
   Price: "38.300",
-  TimeInForce: 3,
+  TimeInForce: 0,
   OpenClose: 0,
   ClientAccount: '   ',
   CustomerInfo: '               ',
