@@ -54,10 +54,10 @@ var MessageType_options = [
 ];
 
 var tif_options = [
-         {id: "0", value: "0(Day)"},
-         {id:"3", value:"3(Immediate or Cancel (FaK))"},
-        {id: "4", value:"4(Fill or Kill)"},
-        {id: "100", value: "100(Fill-and-kill immediately)"}
+         {id: 0, value: "0(Day)"},
+         {id: 3, value:"3(Immediate or Cancel (FaK))"},
+        {id: 4, value:"4(Fill or Kill)"},
+        {id: 100, value: "100(Fill-and-kill immediately)"}
  
 ];
 
@@ -106,7 +106,7 @@ var propertysheet_ord = {
 
     { label:"Side", type:"combo", id:"Side", value: 'Buy', options:side_options},
     { label:"Price", type:"text", id:"Price", value: 300.12},
-    { label:"TimeInForce", type:"combo", id:"TimeInForce",options: tif_options, value: '0'},
+    { label:"TimeInForce", type:"combo", id:"TimeInForce",options: tif_options, value: 0},
     
     { label:"OpenClose", type:"combo", id:"OpenClose", options: openclose_options, value: '0'},
     { label:"ClientAccount", type:"text", id:"ClientAccount", value: 300},
