@@ -303,7 +303,7 @@ $$("sets_ord").setValues(defaults_new_order);
 $$("sets_cxl").hide();
 $$("sets_mod").hide();
 
-
+console.log($$('OrderBookID'));
 
 
 
