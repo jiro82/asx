@@ -1,3 +1,5 @@
+const global_symbolfile ="https://weifix.github.io/asx/csv/symbols.csv";
+
 const ASX_OUCH_MSG_MAP = {
 
     UO  : ["PacketLength","PacketType","MessageType","OrderToken","OrderBookID","Side","Quantity","Price","TimeInForce","OpenClose","ClientAccount","CustomerInfo","ExchangeInfo","ClearingParticipant","CrossingKey","CapacityOfParticipant","DirectedWholesale","ExecutionVenue","IntermediaryID","OrderOrigin","Filler","OUCHOrderType","ShortSellQuantity","MinimumAcceptableQuantity"],
@@ -336,7 +338,7 @@ $$("sets_cxl").hide();
 $$("sets_mod").hide();
 
 
-webix.ajax("https://weifix.github.io/asx/csv/symbols.csv",'txt').then(function(data){
+webix.ajax(global_symbolfile,'txt').then(function(data){
   
   
   let  symbol_options =( _.tail( _.map( _.split(data.text(),'\n'),(line)=>{arr =_.split(line,'|');
