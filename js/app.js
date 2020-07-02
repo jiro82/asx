@@ -258,7 +258,7 @@ const defaults_new_order =
   PacketType: 'U',
   MessageType: 'O',
   OrderToken: '995000375     ',
-  OrderBookID: parseInt('01EE4D',16),
+  OrderBookID: '', //parseInt('01EE4D',16),
   Side: 'B',
   Quantity: 1000,
   Price: "38.300",
