@@ -448,3 +448,6 @@ function handlerListEdit(){
     const global_ASX_OUCH_ENCODE = asx_ouch_parsers_lodash.ASX_OUCH_ENCODE;
     const global_ASX_OUCH_FIELDS = asx_ouch_parsers_lodash.ASX_OUCH_FIELDS;
     const  global_ASX_OUCH_MESSAGES = asx_ouch_parsers_lodash.ASX_OUCH_MESSAGES;
+
+$$("list1").select(0); // select item 0 in message template list by default
+
