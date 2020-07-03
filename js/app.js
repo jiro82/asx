@@ -292,7 +292,7 @@ const defaults_cxl_order =
 
 const defaults_mod_order =
   { 
-  PacketLength: 161,
+  PacketLength: 160,
   PacketType: 'U',
   MessageType: 'U',
   ExistingOrderToken:'',
